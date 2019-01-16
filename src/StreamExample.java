@@ -32,7 +32,7 @@ public class StreamExample {
         }
 
     }
-
+//тож самое что выше, но в 10 раз быстрее
     private static void doWithLambda(List<String> strings) {
         List<User> users = strings.stream().filter(name -> name != null && !name.isEmpty()).sorted().map(String::toUpperCase).map(User::new).collect(Collectors.toList());
         users.forEach(System.out::println);

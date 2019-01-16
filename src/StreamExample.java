@@ -22,7 +22,7 @@ public class StreamExample {
             }
         }
         Collections.sort(strings);
-        
+
         List<User> users = new ArrayList<>();
         for (String name : strings) {
             User user = new User(name.toUpperCase());

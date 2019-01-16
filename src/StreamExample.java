@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 //дан лист строк. Отсортировать, отфильтровать, избавиться от пустых строк и null, привести к верхнему регистру
 //создать user'ов, вывести имена
@@ -30,6 +31,11 @@ public class StreamExample {
             users.add(user);
         }
 
+    }
+
+    private static void doWithLambda(List<String> strings) {
+        List<User> users = strings.stream().filter(name -> name != null && !name.isEmpty()).sorted().map(String::toUpperCase).map(User::new).collect(Collectors.toList());
+        users.forEach(System.out::println);
     }
 
 }
